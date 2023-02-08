@@ -1,4 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import router from "./router/index";
+import "./styles/index";
+import "./assets/font/iconfont.css";
+import App from "./App.vue";
 
-createApp(App).mount('#app')
+// 统一不同设备和浏览器的样式
+// import "normalize.css";
+
+createApp(App).use(router).mount("#app");

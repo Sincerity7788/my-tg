@@ -1,0 +1,30 @@
+{
+  "id": "3884477",
+  "name": "my-tg",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "及时通讯",
+  "glyphs": [
+    {
+      "icon_id": "109761",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "900870",
+      "name": "close-2",
+      "font_class": "close2",
+      "unicode": "e6dd",
+      "unicode_decimal": 59101
+    },
+    {
+      "icon_id": "12316659",
+      "name": "搜素",
+      "font_class": "sousu",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    }
+  ]
+}
