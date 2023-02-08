@@ -24,7 +24,7 @@ export default {
 
 <style lang="less" scoped>
 .head_root {
-  height: 100%;
+  height: 80px;
   background-color: rgb(82, 124, 162);
   display: flex;
   & > .head_root_left,

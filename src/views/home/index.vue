@@ -7,8 +7,9 @@
         @rightCallback="rightCallback"
         left-icon="icon-menu"
         right-icon="icon-sousu"
-        >{{ title }}</HeadBox
       >
+        {{ title }}
+      </HeadBox>
     </div>
     <!--  信息列表  -->
     <div class="home_root_infoList">
@@ -17,10 +18,17 @@
     <div class="home_root_add">
       <van-icon name="plus" />
     </div>
+    <van-overlay :show="showSidebar" @click="openOfClose(false)">
+      <div class="home_root_wrapper">
+        <div class="home_root_wrapper_menu" @click.stop>菜单项</div>
+      </div>
+    </van-overlay>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 import HeadBox from "./components/Head/Head.vue";
 import InfoList from "./components/InfoList";
 export default {
@@ -29,21 +37,39 @@ export default {
     HeadBox,
     InfoList,
   },
-  data() {
-    return {
-      title: "正在连接",
+  setup() {
+    // 路由实例
+    const router = useRouter();
+    // 页面标题
+    let title = ref("正在连接");
+    // 是否显示打开侧边栏
+    const showSidebar = ref(false);
+
+    // 打开/关闭侧边栏
+    const openOfClose = (val) => {
+      showSidebar.value = val;
     };
-  },
-  methods: {
     // 左边按钮事件
-    leftCallback() {},
+    const leftCallback = () => {
+      openOfClose(true);
+    };
     // 右边按钮事件
-    rightCallback() {},
+    const rightCallback = () => {
+      router.push("/search");
+    };
+
+    return {
+      title,
+      showSidebar,
+      openOfClose,
+      leftCallback,
+      rightCallback,
+    };
   },
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .home_root {
   .home_root_head {
     height: 80px;
@@ -65,6 +91,14 @@ export default {
     align-items: center;
     font-size: 50px;
     color: #fff;
+  }
+  .home_root_wrapper {
+    height: 100vh;
+    .home_root_wrapper_menu {
+      height: 100vh;
+      width: 50vw;
+      background-color: #fff;
+    }
   }
 }
 </style>

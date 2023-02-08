@@ -13,10 +13,10 @@
       <div class="list_item_root_center_left">
         <div class="list_item_root_center_left_user">用户名</div>
         <div class="list_item_root_center_left_message">
-          消息内容消息内容消息内容消息内容消息内容消息内容
+          <slot></slot>
         </div>
       </div>
-      <div class="list_item_root_center_right">
+      <div class="list_item_root_center_right" v-if="showRight">
         <div>12月12日</div>
         <div class="list_item_root_center_right_info">1245</div>
       </div>
@@ -27,6 +27,13 @@
 <script>
 export default {
   name: "ListItem",
+  props: {
+    showRight: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  setup() {},
 };
 </script>
 

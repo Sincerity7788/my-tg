@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div v-for="item in 40" :key="item"><ListItem /></div>
+    <div v-for="item in 40" :key="item">
+      <ListItem>消息内容消息内容消息内容消息内容消息内容消息内容</ListItem>
+    </div>
   </div>
 </template>
 
@@ -11,6 +13,7 @@ export default {
   components: {
     ListItem,
   },
+  setup() {},
 };
 </script>
 
